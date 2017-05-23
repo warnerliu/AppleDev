@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "ContactViewController.h"
+#import "LayerTestController.h"
+#import "ProfileRootViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+    ContactViewController *contactVC = [[ContactViewController alloc]init];
+    contactVC.title = @"contact";
+    CALayer *_grayLayer = [[CALayer alloc]init];
+    _grayLayer.frame = [[UIScreen mainScreen] bounds];
+    _grayLayer.backgroundColor = [[[UIColor blackColor]colorWithAlphaComponent:0.2f]CGColor];
+    _grayLayer.borderWidth = 5;
+    _grayLayer.borderColor = [[UIColor greenColor]CGColor];
+    [contactVC setGrayLayer:_grayLayer];
+    
+    LayerTestController *layerController = [[LayerTestController alloc]init];
+    [self.window setRootViewController:layerController];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
