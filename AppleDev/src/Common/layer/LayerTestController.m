@@ -49,7 +49,7 @@
     CAShapeLayer *pathLayer = [[CAShapeLayer alloc]init];
     pathLayer.frame = self.view.bounds;
     pathLayer.path = [PathFactory circlePath].CGPath;
-    pathLayer.backgroundColor = [UIColor greenColor].CGColor;
+//    pathLayer.backgroundColor = [UIColor greenColor].CGColor;
     pathLayer.cornerRadius = 20.0;
     pathLayer.strokeColor = [[UIColor redColor] CGColor];
     pathLayer.fillColor = nil;
